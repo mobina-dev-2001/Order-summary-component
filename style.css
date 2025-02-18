@@ -1,0 +1,206 @@
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--pale-blue);
+    background-image: url('images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.card-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.card-image-container img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.card-body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.card-body-container h1 {
+    color: var(--dark-blue);
+    font-size: 1.75rem;
+    font-weight: 900;
+}
+
+.card-body-container p {
+    padding: 0 1rem;
+    color: var(--desaturated-blue);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.plan-details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 1.2rem;
+    background-color: var(--very-pale-blue);
+    border-radius: 10px;
+}
+
+.plan-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.plan-details div h4 {
+    margin-bottom: 5px;
+    color: var(--dark-blue);
+    font-weight: 800;
+}
+
+.plan-details span {
+    color: var(--desaturated-blue);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.plan-change-option a {
+    color: var(--bright-blue);
+    font-weight: 700;
+    transition: all ease 300ms;
+}
+
+.plan-change-option a:hover,
+.plan-change-option a:active {
+    opacity: .7;
+    text-decoration: none;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.order-finalize-button {
+    width: 90%;
+    padding: 1rem;
+    background-color: var(--bright-blue);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: var(--very-pale-blue);
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    cursor: pointer;
+    transition: all ease 300ms;
+}
+
+.order-finalize-button:hover {
+    opacity: .7;
+}
+
+.order-cancel-button {
+    width: 90%;
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: var(--desaturated-blue);
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all ease 300ms;
+}
+
+.order-cancel-button:hover {
+    color: var(--dark-blue);
+}
+
+@media only screen and (max-width: 576px) {
+    body {
+        background-color: var(--pale-blue);
+        background-image: url('images/pattern-background-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .card-container {
+        width: 400px;
+    }
+
+    .card-body-container {
+        padding: 1.5rem;
+    }
+
+    .card-body-container p {
+        padding: 0 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        line-height: 1.75;
+    }
+
+    .plan-details div h4,
+    .plan-change-option a {
+        font-weight: 900;
+    }
+
+    .plan-details span {
+        font-weight: 700;
+    }
+
+    .plan-details-container {
+        width: 100%;
+    }
+
+    .order-cancel-button {
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    .order-finalize-button {
+        width: 100%;
+        padding: 1.2rem;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
