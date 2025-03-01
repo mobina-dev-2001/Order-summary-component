@@ -12,6 +12,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 body {
@@ -20,7 +21,8 @@ body {
     background-image: url('images/pattern-background-desktop.svg');
     background-repeat: no-repeat;
     background-size: contain;
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: 'Red Hat Display', serif;
+    font-size: 16px;
 }
 
 .card-container {
@@ -39,7 +41,7 @@ body {
     border-radius: 20px 20px 0 0;
 }
 
-.card-body-container {
+.content-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,13 +49,13 @@ body {
     padding: 2rem;
 }
 
-.card-body-container h1 {
+.content-container h1 {
     color: var(--dark-blue);
     font-size: 1.75rem;
     font-weight: 900;
 }
 
-.card-body-container p {
+.content-container p {
     padding: 0 1rem;
     color: var(--desaturated-blue);
     font-size: 1rem;
@@ -67,7 +69,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    padding: 1.2rem;
+    padding: 1.4rem;
     background-color: var(--very-pale-blue);
     border-radius: 10px;
 }
@@ -78,22 +80,27 @@ body {
     gap: 20px;
 }
 
-.plan-details div h4 {
-    margin-bottom: 5px;
-    color: var(--dark-blue);
-    font-weight: 800;
+.plan-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.plan-details span {
+.plan-details div span:first-child {
+    color: var(--dark-blue);
+    font-weight: 900;
+}
+
+.plan-details div span:last-child {
     color: var(--desaturated-blue);
-    font-size: 1rem;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .plan-change-option a {
     color: var(--bright-blue);
-    font-weight: 700;
-    transition: all ease 300ms;
+    font-size: .9rem;
+    font-weight: 900;
+    transition: all ease 200ms;
 }
 
 .plan-change-option a:hover,
@@ -108,6 +115,7 @@ body {
     align-items: center;
     gap: 15px;
     width: 100%;
+    margin-top: .5rem;
 }
 
 .order-finalize-button {
@@ -120,10 +128,10 @@ body {
     color: var(--very-pale-blue);
     font-family: 'Red Hat Display', sans-serif;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 900;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     cursor: pointer;
-    transition: all ease 300ms;
+    transition: all ease 200ms;
 }
 
 .order-finalize-button:hover {
@@ -142,7 +150,7 @@ body {
     font-size: 1rem;
     font-weight: 900;
     cursor: pointer;
-    transition: all ease 300ms;
+    transition: all ease 200ms;
 }
 
 .order-cancel-button:hover {
@@ -161,28 +169,23 @@ body {
         width: 400px;
     }
 
-    .card-body-container {
+    .content-container {
         padding: 1.5rem;
     }
 
-    .card-body-container p {
+    .content-container p {
         padding: 0 1.5rem;
         font-size: 1.1rem;
         font-weight: 700;
         line-height: 1.75;
     }
 
-    .plan-details div h4,
-    .plan-change-option a {
-        font-weight: 900;
-    }
-
-    .plan-details span {
-        font-weight: 700;
-    }
-
     .plan-details-container {
         width: 100%;
+    }
+
+    .plan-change-option a {
+        font-size: 1rem;
     }
 
     .order-cancel-button {
@@ -192,15 +195,7 @@ body {
 
     .order-finalize-button {
         width: 100%;
-        padding: 1.2rem;
+        padding: 1.3rem;
+        font-size: 1.1rem;
     }
-}
-
-.attribution {
-    font-size: 11px;
-    text-align: center;
-}
-
-.attribution a {
-    color: hsl(228, 45%, 44%);
 }
